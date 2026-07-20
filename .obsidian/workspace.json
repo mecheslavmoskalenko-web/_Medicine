@@ -1,0 +1,199 @@
+{
+  "main": {
+    "id": "7a77fe728f7fc134",
+    "type": "split",
+    "children": [
+      {
+        "id": "8040ed064bbb6f07",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8fd3d3c85a036a93",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Skills/medical-record/assets/analyzes_summary.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "analyzes_summary"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "711e9d20e2b460c8",
+    "type": "split",
+    "children": [
+      {
+        "id": "353cc260ce1f528c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "72cd16af8f71937a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Файловый менеджер"
+            }
+          },
+          {
+            "id": "fce0acc4aec73c75",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Поиск"
+            }
+          },
+          {
+            "id": "ccf7eb6cdcfc497a",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Закладки"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "cd69ede36ffa8237",
+    "type": "split",
+    "children": [
+      {
+        "id": "8e5e80c53a2407dc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c5a4d33b4a918e08",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Skills/medical-record/assets/analyzes_summary.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Обратные ссылки для analyzes_summary"
+            }
+          },
+          {
+            "id": "76ccf9be0c596281",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Skills/medical-record/assets/analyzes_summary.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Исходящие ссылки из analyzes_summary"
+            }
+          },
+          {
+            "id": "a5d30290f5cc0d49",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Теги"
+            }
+          },
+          {
+            "id": "2d7c90f2493d3d8d",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Все свойства"
+            }
+          },
+          {
+            "id": "a74c3a993320dd3b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Skills/medical-record/assets/analyzes_summary.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Структура analyzes_summary"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Меню быстрого перехода": false,
+      "graph:Граф": false,
+      "canvas:Создать новый холст": false,
+      "daily-notes:Сегодняшняя заметка": false,
+      "templates:Вставить шаблон": false,
+      "command-palette:Открыть палитру команд": false,
+      "bases:Создать новую базу": false
+    }
+  },
+  "active": "72cd16af8f71937a",
+  "lastOpenFiles": [
+    "analyzes_summary.md",
+    "Skills/medical-record/assets/analyzes_summary.md",
+    "Skills/medical-record/assets/doctors_reports.md",
+    "Skills/medical-record/assets/analyzes_summary.md",
+    "Skills/medical-record/assets/patient_feelings.md",
+    "patient_feelings.md",
+    "Skills/medical-record/assets/patient_profile.md",
+    "Skills/medical-record/assets/research_results.md",
+    "Skills/medical-record/assets/medications.md",
+    "Skills/medical-record/SKILL.md"
+  ]
+}
