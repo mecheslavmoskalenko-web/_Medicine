@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Skills/medical-record/assets/analyzes_summary.md",
+                "file": "analyzes_summary.md",
                 "mode": "source",
                 "source": false
               },
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Skills/medical-record/assets/analyzes_summary.md",
+                "file": "timeline.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Обратные ссылки для analyzes_summary"
+              "title": "Обратные ссылки для timeline"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Skills/medical-record/assets/analyzes_summary.md",
+                "file": "timeline.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Исходящие ссылки из analyzes_summary"
+              "title": "Исходящие ссылки из timeline"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Skills/medical-record/assets/analyzes_summary.md",
+                "file": "timeline.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура analyzes_summary"
+              "title": "Структура timeline"
             }
           }
         ]
@@ -183,17 +183,18 @@
       "bases:Создать новую базу": false
     }
   },
-  "active": "72cd16af8f71937a",
+  "active": "8fd3d3c85a036a93",
   "lastOpenFiles": [
+    "timeline.md",
     "analyzes_summary.md",
+    "Skills/medical-record/assets/medications.md",
+    "doctors_reports.md",
     "Skills/medical-record/assets/analyzes_summary.md",
     "Skills/medical-record/assets/doctors_reports.md",
-    "Skills/medical-record/assets/analyzes_summary.md",
     "Skills/medical-record/assets/patient_feelings.md",
     "patient_feelings.md",
     "Skills/medical-record/assets/patient_profile.md",
     "Skills/medical-record/assets/research_results.md",
-    "Skills/medical-record/assets/medications.md",
     "Skills/medical-record/SKILL.md"
   ]
 }
