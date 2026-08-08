@@ -28,7 +28,7 @@ A skill for building and maintaining one patient's personal medical record over 
 
 ## Original document storage
 
-In addition to the markdown record, original source documents are preserved unmodified in `originaldocs/`, organized by category:
+In addition to the markdown record, original source documents are preserved in `originaldocs/`, organized by category. This is purely an organizational/renaming step — it does not change how documents are recognized, read, or how data is extracted and structured into the markdown files above; that process is unchanged.
 
 | Folder | Contents |
 |---|---|
@@ -36,9 +36,11 @@ In addition to the markdown record, original source documents are preserved unmo
 | `originaldocs/doctorreports/` | Original doctor's reports/consultation documents (the source files behind `doctors_reports.md` entries) |
 | `originaldocs/research_results/` | Original imaging/ultrasound/biopsy and other non-lab study documents (the source files behind `research_results.md` entries) |
 
-Whenever a new document is processed into the markdown record, also save a copy of the original file into the matching `originaldocs/` subfolder (converting disguised zip/JPEG bundles into a readable format such as PDF or the extracted images, since the raw disguised archive isn't useful on its own).
+**Keep the original file format.** Save the file exactly as received — PDF stays PDF, JPEG stays JPEG, PNG stays PNG, etc. Do not convert formats. The only change is the filename and which folder it lives in.
 
-**Naming convention:** `ДД-ММ-ГГГГ краткая суть.<ext>` — date in `DD-MM-YYYY` format (day-month-year, matching how the patient writes dates), a space, then a short (2-4 word) Russian description of what the document is, lowercase, space-separated (no underscores). The extension matches the saved format (`.pdf`, `.jpeg`, etc.).
+- **Exception — disguised zip archives:** the raw `.pdf`-that's-really-a-zip (see "Handle disguised archives" below) isn't a usable file on its own once unzipped. In that case, save the extracted page image(s) from inside it (in their original image format, e.g. `.jpeg`) into the `originaldocs/` subfolder instead of the outer disguised-zip file.
+
+**Naming convention:** `ДД-ММ-ГГГГ краткая суть.<ext>` — date in `DD-MM-YYYY` format (day-month-year, matching how the patient writes dates), a space, then a short (2-4 word) Russian description of what the document is, lowercase, space-separated (no underscores). The extension matches the original file's format.
 
 Examples:
 - `originaldocs/analysis/27-05-2023 гисто желудок.pdf` — a histology/biopsy lab result (stomach)
@@ -64,7 +66,7 @@ If multiple documents share the same date and category (e.g. two lab orders on t
 5. **Extract structured lab data** into `analyzes_summary.md`: one dated section per order, one row per analyte, always including the reference range and a status flag (↑/↓/norm) so trends are visible at a glance.
 6. **Cross-reference trends.** When a new lab result arrives for an analyte that already has prior entries, note the trend directly in the record (e.g., "ниже, чем в предыдущих анализах") — this is one of the main reasons to keep a longitudinal record rather than one-off summaries.
 7. **Non-lab findings** (ultrasound, spermogram, biopsy, imaging) go in `research_results.md`; doctor consultations/diagnoses/recommendations go in `doctors_reports.md`; keep these distinct from raw lab numbers in `analyzes_summary.md`.
-8. **Save originals.** After extracting data from any document, also save the original (or a readable reconstruction of it, per "Handle disguised archives" above) into the matching `originaldocs/` subfolder, following the naming convention in "Original document storage" above.
+8. **Save originals.** After extracting data from any document, also save a copy of it, unmodified in format, into the matching `originaldocs/` subfolder, renamed per the naming convention in "Original document storage" above.
 
 ## After updating
 
