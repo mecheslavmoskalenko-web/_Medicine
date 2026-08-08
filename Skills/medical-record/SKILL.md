@@ -26,6 +26,18 @@ A skill for building and maintaining one patient's personal medical record over 
 | `timeline.md` | Chronological log of all of the above, one line per event |
 | `todo.md` | Outstanding medical tasks (tests still needed, decisions pending, follow-ups) |
 
+## Original document storage
+
+In addition to the markdown record, original source documents are preserved unmodified in `originaldocs/`, organized by category:
+
+| Folder | Contents |
+|---|---|
+| `originaldocs/analysis/` | Original lab result documents (the source files behind `analyzes_summary.md` entries) |
+| `originaldocs/doctorreports/` | Original doctor's reports/consultation documents (the source files behind `doctors_reports.md` entries) |
+| `originaldocs/research_results/` | Original imaging/ultrasound/biopsy and other non-lab study documents (the source files behind `research_results.md` entries) |
+
+Whenever a new document is processed into the markdown record, also save a copy of the original file into the matching `originaldocs/` subfolder (converting disguised zip/JPEG bundles into a readable format such as PDF or the extracted images, since the raw disguised archive isn't useful on its own). Use a clear filename that includes the date (e.g. `2026-08-08_spermogram.pdf`) so originals stay easy to match against their corresponding record entries.
+
 ## Core rules (from the record's own README — always follow these)
 
 1. **Update, don't replace.** After processing each new document, update only the relevant file(s). Never delete existing entries without the user explicitly asking to remove them.
@@ -37,13 +49,13 @@ A skill for building and maintaining one patient's personal medical record over 
 ## Processing uploaded documents
 
 1. **Inventory first.** List every file the user uploaded/referenced before opening any of them.
-2. **Check for duplicates before processing.** Before extracting any lab result, check `analyzes_summary.md` for an existing dated section matching the same order number (or, if no order number is visible, the same date + lab name + matching set of analytes). If a match is found, don't re-extract or re-add that result — tell the user it's already in the record (referencing the existing date/order) and skip it. If a batch contains a mix of new and already-recorded orders, process only the new ones and tell the user which were skipped as duplicates.
-3. **Handle disguised archives.** Files with medical-lab-portal names (long numeric order IDs, `_e_a_k_`/`_e_a_l_` style suffixes, or just a `.pdf` extension from a phone export) are frequently **zip archives in disguise**, not real PDFs — `pdfinfo`/`pdftotext` will fail with a trailer/xref error. If a `.pdf` fails standard PDF tools, run `file <name>` — if it reports "Zip archive data", copy it to `<name>.zip`, unzip it, and read the `.txt` (extracted text) and `.jpeg` (page image) files inside, plus `manifest.json` for page structure. This is the normal case for Russian lab-portal exports (Гемотест, ДНКОМ, CMD, etc.), not an error.
-4. **Real PDFs** (pdfinfo/pdftotext work normally): use standard PDF text extraction. See the `pdf-reading` skill if bundled/available for detailed technique guidance.
-5. **Image-only pages** (empty `.txt`, or a photo/screenshot): view the image directly and transcribe what's legible. If handwriting or resolution makes specific numbers unreliable, flag it explicitly in the relevant file rather than guessing, and ask the user for a clearer copy.
-6. **Extract structured lab data** into `analyzes_summary.md`: one dated section per order, one row per analyte, always including the reference range and a status flag (↑/↓/norm) so trends are visible at a glance.
-7. **Cross-reference trends.** When a new lab result arrives for an analyte that already has prior entries, note the trend directly in the record (e.g., "ниже, чем в предыдущих анализах") — this is one of the main reasons to keep a longitudinal record rather than one-off summaries.
-8. **Non-lab findings** (ultrasound, spermogram, biopsy, imaging) go in `research_results.md`; doctor consultations/diagnoses/recommendations go in `doctors_reports.md`; keep these distinct from raw lab numbers in `analyzes_summary.md`.
+2. **Handle disguised archives.** Files with medical-lab-portal names (long numeric order IDs, `_e_a_k_`/`_e_a_l_` style suffixes, or just a `.pdf` extension from a phone export) are frequently **zip archives in disguise**, not real PDFs — `pdfinfo`/`pdftotext` will fail with a trailer/xref error. If a `.pdf` fails standard PDF tools, run `file <n>` — if it reports "Zip archive data", copy it to `<n>.zip`, unzip it, and read the `.txt` (extracted text) and `.jpeg` (page image) files inside, plus `manifest.json` for page structure. This is the normal case for Russian lab-portal exports (Гемотест, ДНКОМ, CMD, etc.), not an error.
+3. **Real PDFs** (pdfinfo/pdftotext work normally): use standard PDF text extraction. See the `pdf-reading` skill if bundled/available for detailed technique guidance.
+4. **Image-only pages** (empty `.txt`, or a photo/screenshot): view the image directly and transcribe what's legible. If handwriting or resolution makes specific numbers unreliable, flag it explicitly in the relevant file rather than guessing, and ask the user for a clearer copy.
+5. **Extract structured lab data** into `analyzes_summary.md`: one dated section per order, one row per analyte, always including the reference range and a status flag (↑/↓/norm) so trends are visible at a glance.
+6. **Cross-reference trends.** When a new lab result arrives for an analyte that already has prior entries, note the trend directly in the record (e.g., "ниже, чем в предыдущих анализах") — this is one of the main reasons to keep a longitudinal record rather than one-off summaries.
+7. **Non-lab findings** (ultrasound, spermogram, biopsy, imaging) go in `research_results.md`; doctor consultations/diagnoses/recommendations go in `doctors_reports.md`; keep these distinct from raw lab numbers in `analyzes_summary.md`.
+8. **Save originals.** After extracting data from any document, also save the original (or a readable reconstruction of it, per "Handle disguised archives" above) into the matching `originaldocs/` subfolder — see "Original document storage" above.
 
 ## After updating
 
