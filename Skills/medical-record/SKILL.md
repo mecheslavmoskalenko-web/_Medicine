@@ -36,7 +36,16 @@ In addition to the markdown record, original source documents are preserved unmo
 | `originaldocs/doctorreports/` | Original doctor's reports/consultation documents (the source files behind `doctors_reports.md` entries) |
 | `originaldocs/research_results/` | Original imaging/ultrasound/biopsy and other non-lab study documents (the source files behind `research_results.md` entries) |
 
-Whenever a new document is processed into the markdown record, also save a copy of the original file into the matching `originaldocs/` subfolder (converting disguised zip/JPEG bundles into a readable format such as PDF or the extracted images, since the raw disguised archive isn't useful on its own). Use a clear filename that includes the date (e.g. `2026-08-08_spermogram.pdf`) so originals stay easy to match against their corresponding record entries.
+Whenever a new document is processed into the markdown record, also save a copy of the original file into the matching `originaldocs/` subfolder (converting disguised zip/JPEG bundles into a readable format such as PDF or the extracted images, since the raw disguised archive isn't useful on its own).
+
+**Naming convention:** `ДД-ММ-ГГГГ краткая суть.<ext>` — date in `DD-MM-YYYY` format (day-month-year, matching how the patient writes dates), a space, then a short (2-4 word) Russian description of what the document is, lowercase, space-separated (no underscores). The extension matches the saved format (`.pdf`, `.jpeg`, etc.).
+
+Examples:
+- `originaldocs/analysis/27-05-2023 гисто желудок.pdf` — a histology/biopsy lab result (stomach)
+- `originaldocs/doctorreports/27-05-2023 гастроэнтеролог.pdf` — a gastroenterologist's consultation report
+- `originaldocs/research_results/08-05-2026 узи мошонки.pdf` — an ultrasound study
+
+If multiple documents share the same date and category (e.g. two lab orders on the same day), add a distinguishing word rather than a number (e.g. `27-05-2023 гисто желудок` vs `27-05-2023 биохимия крови`) so names stay descriptive rather than opaque.
 
 ## Core rules (from the record's own README — always follow these)
 
@@ -55,7 +64,7 @@ Whenever a new document is processed into the markdown record, also save a copy 
 5. **Extract structured lab data** into `analyzes_summary.md`: one dated section per order, one row per analyte, always including the reference range and a status flag (↑/↓/norm) so trends are visible at a glance.
 6. **Cross-reference trends.** When a new lab result arrives for an analyte that already has prior entries, note the trend directly in the record (e.g., "ниже, чем в предыдущих анализах") — this is one of the main reasons to keep a longitudinal record rather than one-off summaries.
 7. **Non-lab findings** (ultrasound, spermogram, biopsy, imaging) go in `research_results.md`; doctor consultations/diagnoses/recommendations go in `doctors_reports.md`; keep these distinct from raw lab numbers in `analyzes_summary.md`.
-8. **Save originals.** After extracting data from any document, also save the original (or a readable reconstruction of it, per "Handle disguised archives" above) into the matching `originaldocs/` subfolder — see "Original document storage" above.
+8. **Save originals.** After extracting data from any document, also save the original (or a readable reconstruction of it, per "Handle disguised archives" above) into the matching `originaldocs/` subfolder, following the naming convention in "Original document storage" above.
 
 ## After updating
 
